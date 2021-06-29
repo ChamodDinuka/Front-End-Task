@@ -1,0 +1,39 @@
+.card{
+    height: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5px;
+    display: flex;
+}
+img#_img {
+    height: 150px;
+}
+a#_review {
+    text-decoration: none;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+.right {
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+._name {
+    color: gray;
+}
+@media only screen and (min-width: 375px) and (max-width: 969px) {  
+    .card { 
+      display: table;
+    }
+    img#_img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  }
