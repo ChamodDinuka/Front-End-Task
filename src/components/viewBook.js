@@ -2,14 +2,15 @@ import axios from 'axios';
 import React,{useEffect,useState} from 'react'
 import {Card} from './card'
 import './viewBook.css'
+import {connect} from 'react-redux'
 
 require('dotenv').config();
 
-function ViewBook() {
+function ViewBook(props) {
     
     const [dataSet, setDataSet] = useState();
     useEffect(() => {
-        
+        console.log(props.name)
         let tempData=[];
         axios.get(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${process.env.REACT_APP_API_KEY}`).then(
             res=>{
@@ -31,5 +32,10 @@ function ViewBook() {
     )
     
 }
+const mapStateToProps=(state)=>{
+    return{
+        name : state.name 
+    }
+}
 
-export default ViewBook
+export default connect(mapStateToProps)(ViewBook)
